@@ -12,8 +12,13 @@ public class Main {
             String rndWord = WordGenerator.getWord("src/main/java/se/yrgo/wordlist.txt");
             System.out.println(rndWord);
 
+            // en spelklass
+            // en playerklass
+            //
+
             // Be om två spelarnamn
             // Skapa två spelare
+            // spelare ska ha ett namn och poäng
 
             // Börja ett nytt spel
 
