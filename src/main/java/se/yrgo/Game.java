@@ -34,7 +34,7 @@ public class Game {
             else {
                 currentPlayer = playerTwo;
             }
-            DrawGame();
+            System.out.println(GetSecretWord());
             System.out.println(currentPlayer.getName + "! Guess a letter or the entire word:");
             String guess = scanner.next();
             Guess(guess);
@@ -42,8 +42,17 @@ public class Game {
 
     }
 
-    private void DrawGame() {
-        for (int i = 0; i < )
+    private String GetSecretWord() {
+        String output = "";
+        for (int i = 0; i < randomWord.length(); i++){
+            if(guessedLetters.contains(randomWord.charAt(i))){
+                output += randomWord.charAt(i);
+            }
+            else {
+                output += "_";
+            }
+        }
+        return output;
     }
 
     private void Guess(String guess) {
