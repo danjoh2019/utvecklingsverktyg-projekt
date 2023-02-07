@@ -1,7 +1,12 @@
 package se.yrgo;
 
+import java.nio.file.Path;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        Path path = Path.of("wordlist.txt");
+        String rndWord = WordGenerator.getWord(path);
+
+        System.out.println(rndWord);
     }
 }
