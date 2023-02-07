@@ -56,7 +56,20 @@ public class Game {
     }
 
     private void Guess(String guess) {
-
+        if(guess.length() != randomWord.length()){
+            String guessedLetter = Character.toString(guess.charAt(0));
+            if(randomWord.contains(guessedLetter) && !(guessedLetters.contains(guessedLetter))){
+                guessedLetters.add(guessedLetter.charAt(0));
+            }
+            else{
+                // invalid guess
+            }
+        }
+        else{
+            if(guess.equals(randomWord)){
+                win(currentPlayer);
+            }
+        }
     }
 
     private void switchPlayer(){
