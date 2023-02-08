@@ -32,7 +32,14 @@ public class Main {
                     game.switchPlayer();
                     System.out.println();
                 }
-            }
+}
+                System.out.println("Omgången är över");
+                if (player1.getPoint() > player2.getPoint()) {
+                    System.out.println(player1.getPlayerName() + " vann!!!");
+                } else {
+                    System.out.println(player2.getPlayerName() + " vann!!!");
+                }
+            System.out.println("Tack för att du spelade!");
 
         } catch (IOException ex) {
             System.err.println("Something went wrong");
