@@ -8,7 +8,9 @@ public class Main {
 
         try (Scanner scanner = new Scanner(System.in)){
             // Skapa ett nytt spel
-
+            System.out.println("╔═════════════╗");
+            System.out.println("║ GISSA ORDET ║");
+            System.out.println("╚═════════════╝");
             // Metod för att få fram ett slumpat ord
 
             System.out.println("Vad heter spelare 1?");
