@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        boolean playAgain = true;
 
         try (Scanner scanner = new Scanner(System.in)){
             // Skapa ett nytt spel
@@ -18,28 +19,42 @@ public class Main {
             System.out.printf("Vad heter spelare 2?: ");
             Player player2 = new Player(scanner.next());
 
+        while (playAgain) {
 
-            for(int i = 0; i < 3; i++){
+            for (int i = 0; i < 1; i++) {
                 String rndWord = WordGenerator.getWord("src/main/java/se/yrgo/wordlist.txt");
-                Game game = new Game(player1,player2,rndWord);
+                Game game = new Game(player1, player2, rndWord);
 
                 System.out.println("\nNy runda!\n");
                 System.out.printf("Det hemliga ordet är %d bokstäver långt%n", rndWord.length());
                 game.setRandomPlayer();
-                while (game.isGameRunning()){
+                while (game.isGameRunning()) {
                     game.gameLoop();
                     game.guess(scanner.next());
                     game.switchPlayer();
                     System.out.println();
                 }
-}
-                System.out.println("Omgången är över");
-                if (player1.getPoint() > player2.getPoint()) {
-                    System.out.println(player1.getPlayerName() + " vann!!!");
-                } else {
-                    System.out.println(player2.getPlayerName() + " vann!!!");
+            }
+            System.out.println("Omgången är över");
+            if (player1.getPoint() > player2.getPoint()) {
+                System.out.println(player1.getPlayerName() + " vann!!!");
+            } else {
+                System.out.println(player2.getPlayerName() + " vann!!!");
+            }
+
+            System.out.print("Vill ni spela en gång till? (j/n) ");
+            String input = scanner.nextLine();
+            scanner.nextLine();
+
+                switch (input) {
+                    case "n":
+                        playAgain = false;
                 }
-            System.out.println("Tack för att du spelade!");
+
+        }
+
+
+            System.out.println("Tack för att ni spelade!");
 
         } catch (IOException ex) {
             System.err.println("Something went wrong");

@@ -55,7 +55,7 @@ public class Game {
     }
 
 
-    private String GetSecretWord() {
+    public String GetSecretWord() {
         String output = "";
         for (int i = 0; i < randomWord.length(); i++) {
             if (guessedLetters.contains(randomWord.charAt(i))) {
@@ -107,7 +107,7 @@ public class Game {
     public void win() {
         System.out.println(currentPlayer.getPlayerName() + " gissade rätt!");
         System.out.println("Rätt ord var: " + randomWord);
-        currentPlayer.setPoint(1);
+        currentPlayer.addPoint();
         gameRunning = false;
     }
 
