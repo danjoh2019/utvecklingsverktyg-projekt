@@ -24,7 +24,7 @@ public class Game {
         this.gameRunning = true;
     }
 
-    public void setRandomPlayer() {
+    public void setRandomPlayer() {         // Används när spelet skapas för att slumpa spelaren som får börja
         if (ThreadLocalRandom.current().nextBoolean()) {
             currentPlayer = playerOne;
         } else {
@@ -32,7 +32,7 @@ public class Game {
         }
     }
 
-    public void gameLoop() {
+    public void gameLoop() {        // Används i en loop för att skriva ut spelets status
         System.out.print("┌");
 
         for (int i = 0; i < randomWord.length() + 2; i++) {
@@ -52,11 +52,11 @@ public class Game {
         System.out.print(currentPlayer.getPlayerName() + ", gissa en bokstav eller hela ordet: ");
     }
 
-    public Player getCurrentPlayer(){
+    public Player getCurrentPlayer() {
         return currentPlayer;
     }
 
-    public String GetSecretWord() {
+    public String GetSecretWord() {                // Skriver ut det hemliga ordet genom att bara visa de bokstäver som spelarna har gissat på
         String output = "";
         for (int i = 0; i < randomWord.length(); i++) {
             if (guessedLetters.contains(randomWord.charAt(i))) {
@@ -68,7 +68,7 @@ public class Game {
         return output;
     }
 
-    public void guess(String input) {
+    public void guess(String input) {               // Kontrollerar om gissningen är giltig, därefter om spelaren har försökt gissa ordet
         String guess = input.toLowerCase();
         if (!(Character.isAlphabetic(guess.charAt(0)))) {
             System.out.println("Skriv en giltig bokstav!");
@@ -90,7 +90,7 @@ public class Game {
                     System.out.println("Försök igen:");
                 }
 
-            } else if(guess.equals(randomWord)){
+            } else if (guess.equals(randomWord)) {
                 win();
             }
 
@@ -105,7 +105,7 @@ public class Game {
         gameRunning = false;
     }
 
-    public boolean isGameRunning() {
+    public boolean isGameRunning() {            // Används i spelloopen för att hålla koll på när ett spel är över
         return gameRunning;
     }
 
