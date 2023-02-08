@@ -49,7 +49,7 @@ public class Game {
 
         System.out.println("┘");
 
-        System.out.println(currentPlayer.getPlayerName() + "! Gissa en bokstav eller hela ordet:");
+        System.out.print(currentPlayer.getPlayerName() + ", gissa en bokstav eller hela ordet: ");
     }
 
 
@@ -76,7 +76,7 @@ public class Game {
                 char guessedLetter = guess.charAt(0);
                 if (!(guessedLetters.contains(guessedLetter))) {
                     guessedLetters.add(guessedLetter);
-                    System.out.println("You guessed " + guessedLetter);
+                    System.out.println("Du gissade på: " + guessedLetter);
                     if (randomWord.equals(GetSecretWord())) {
                         win();
                     }
