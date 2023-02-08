@@ -13,18 +13,17 @@ public class Game {
     private Player currentPlayer;
     private Path RANDOM_WORD_LIST;
     private String randomWord;
-    private Scanner scanner;
     private List<Character> guessedLetters;
 
 
-    public Game(Player playerOne, Player playerTwo, Path RANDOM_WORD_LIST, Scanner scanner){
+    public Game(Player playerOne, Player playerTwo, String randomWord){
         this.playerOne = playerOne;
         this.playerTwo = playerTwo;
         this.RANDOM_WORD_LIST = RANDOM_WORD_LIST;
-        this.scanner = scanner;
+        this.randomWord = randomWord;
     }
 
-    public void startGame(Path RANDOM_WORD_LIST) throws IOException {
+    public Player startGame() throws IOException {
         running = true;
         while(running){
             randomWord = WordGenerator.getWord(RANDOM_WORD_LIST.toString());
@@ -35,7 +34,7 @@ public class Game {
                 currentPlayer = playerTwo;
             }
             System.out.println(GetSecretWord());
-            System.out.println(currentPlayer.getName + "! Guess a letter or the entire word:");
+            System.out.println(currentPlayer.getPlayer + "! Guess a letter or the entire word:");
             String guess = scanner.next();
             Guess(guess);
         }
