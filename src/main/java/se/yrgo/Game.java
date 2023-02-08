@@ -101,7 +101,7 @@ public class Game {
 
     public void win() {
         System.out.println(currentPlayer.getPlayerName() + " win!");
-        currentPlayer.setPoint(1);
+        currentPlayer.addPoint();
         gameRunning = false;
     }
 
