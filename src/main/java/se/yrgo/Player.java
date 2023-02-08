@@ -18,8 +18,8 @@ public class Player {
         return point;
     }
 
-    void setPoint(int addpoint) {
-        this.point += addpoint;
+    void addPoint() {
+        this.point =+ 1;
     }
 }
 

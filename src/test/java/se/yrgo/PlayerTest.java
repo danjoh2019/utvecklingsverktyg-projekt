@@ -13,17 +13,18 @@ class PlayerTest {
     @Test
     void testGetPlayerName() {
         Player player = new Player("kalle");
-      assertEquals("kalle", player.getPlayerName());
+        assertEquals("kalle", player.getPlayerName());
     }
 
-        @Test
-        void testPlayerpoint() {
-        try {
-           // Player addpoint = new Player("gg");
-        }
-       // catch ()
+    @Test
+    void testPlayerpoint() {
+        int number = 0;
+        Player player = new Player("kalle");
+        player.setPoint(1);
+        assertTrue(number < player.getPoint());
 
-        }
+
+    }
 
 
     @Test
