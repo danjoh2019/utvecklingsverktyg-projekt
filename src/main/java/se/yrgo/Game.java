@@ -66,10 +66,10 @@ public class Game {
                         win();
                     }
                 } else {
-                    System.out.println("You have already guessed " + guessedLetter);
+                    System.out.println("Ni har redan gissat på: " + guessedLetter);
                     switchPlayer();
                     System.out.println();
-                    System.out.println("Try again:");
+                    System.out.println("Försök igen:");
                 }
 
             } else {

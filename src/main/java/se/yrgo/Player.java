@@ -10,7 +10,7 @@ public class Player {
         this.point = 0;
     }
 
-    public String getPlayer() {
+    public String getPlayerName() {
         return player;
     }
 

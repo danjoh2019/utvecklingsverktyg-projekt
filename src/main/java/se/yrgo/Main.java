@@ -19,7 +19,7 @@ public class Main {
 
             for(int i = 0; i < 3; i++){
                 System.out.println();
-                System.out.println("New game!");
+                System.out.println("Ny runda!");
                 System.out.println();
                 String rndWord = WordGenerator.getWord("src/main/java/se/yrgo/wordlist.txt");
                 Game game = new Game(player1,player2,rndWord);
