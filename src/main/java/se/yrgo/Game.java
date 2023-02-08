@@ -72,7 +72,7 @@ public class Game {
                     System.out.println("Försök igen:");
                 }
 
-            } else {
+            } else if(guess.equals(randomWord)){
                 win();
             }
 
