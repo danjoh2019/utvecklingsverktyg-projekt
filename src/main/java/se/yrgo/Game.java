@@ -34,7 +34,7 @@ public class Game {
 
     public void gameLoop() {
         System.out.println(GetSecretWord());
-        System.out.println(currentPlayer.getPlayerName() + "! Guess a letter or the entire word:");
+        System.out.println(currentPlayer.getPlayerName() + "! Gissa en bokstav eller hela ordet:");
     }
 
 
@@ -50,35 +50,45 @@ public class Game {
         return output;
     }
 
-    public void guess(String guess) {
-        System.out.println(randomWord);
+    public void guess(String input) {
+        String guess = input.toLowerCase();
+        if (!(Character.isAlphabetic(guess.charAt(0)))) {
+            System.out.println("Skriv en giltig bokstav!");
+            System.out.println("Försök igen");
+            switchPlayer();
+        } else {
+            if (guess.length() != randomWord.length()) {
+                char guessedLetter = guess.charAt(0);
+                if (!(guessedLetters.contains(guessedLetter))) {
+                    guessedLetters.add(guessedLetter);
+                    System.out.println("You guessed " + guessedLetter);
+                    if (randomWord.equals(GetSecretWord())) {
+                        win();
+                    }
+                } else {
+                    System.out.println("You have already guessed " + guessedLetter);
+                    switchPlayer();
+                    System.out.println();
+                    System.out.println("Try again:");
+                }
 
-        if (guess.length() != randomWord.length()) {
-            char guessedLetter = guess.charAt(0);
-
-            System.out.println(guessedLetters);
-
-            if(!(guessedLetters.contains(guessedLetter))){
-                guessedLetters.add(guessedLetter);
-                System.out.println("You guessed " + guessedLetter);
+            } else {
+                win();
             }
-            else{
-                System.out.println("You have already guessed " + guessedLetter);
-            }
 
-
-        }
-        else{
-            System.out.println(currentPlayer.getPlayerName() + " win!");
-            currentPlayer.setPoint(1);
-            gameRunning = false;
         }
 
 
     }
 
-    public boolean gameRunning(){
-        return gameRunning();
+    public void win() {
+        System.out.println(currentPlayer.getPlayerName() + " win!");
+        currentPlayer.setPoint(1);
+        gameRunning = false;
+    }
+
+    public boolean isGameRunning() {
+        return gameRunning;
     }
 
     public void switchPlayer() {
