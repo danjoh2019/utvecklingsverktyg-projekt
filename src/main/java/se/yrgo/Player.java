@@ -1,17 +1,17 @@
 package se.yrgo;
 
 public class Player {
-    private String player;
+    private String name;
 
     private int point;
 
     public Player(String player) {
-        this.player = player;
+        this.name = player;
         this.point = 0;
     }
 
-    public String getPlayer() {
-        return player;
+    public String getPlayerName() {
+        return name;
     }
 
     public int getPoint() {
