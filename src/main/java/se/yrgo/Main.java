@@ -43,7 +43,7 @@ public class Main {
             }
 
             System.out.print("Vill ni spela en gång till? (j/n) ");
-            String input = scanner.nextLine();
+            String input = scanner.next();
             scanner.nextLine();
 
                 switch (input) {
