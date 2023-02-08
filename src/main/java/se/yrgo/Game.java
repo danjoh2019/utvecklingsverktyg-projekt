@@ -33,7 +33,22 @@ public class Game {
     }
 
     public void gameLoop() {
-        System.out.println(GetSecretWord());
+        System.out.print("┌");
+
+        for (int i = 0; i < randomWord.length() + 2; i++) {
+            System.out.print("─");
+        }
+
+        System.out.println("┐");
+        System.out.println("│ " + GetSecretWord() + " │");
+        System.out.print("└");
+
+        for (int i = 0; i < randomWord.length() + 2; i++) {
+            System.out.print("─");
+        }
+
+        System.out.println("┘");
+
         System.out.println(currentPlayer.getPlayerName() + "! Gissa en bokstav eller hela ordet:");
     }
 
