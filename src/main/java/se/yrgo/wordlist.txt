@@ -18,3 +18,5 @@ skalbagge
 foliehatt
 flygplan
 ljudbok
+alfabet
+konduktör
