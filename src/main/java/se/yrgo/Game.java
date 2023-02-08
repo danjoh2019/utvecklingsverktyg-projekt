@@ -1,10 +1,8 @@
 package se.yrgo;
 
-import java.io.IOException;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Game {
@@ -15,6 +13,7 @@ public class Game {
     private Path RANDOM_WORD_LIST;
     private String randomWord;
     private List<Character> guessedLetters;
+    private boolean gameRunning;
 
 
     public Game(Player playerOne, Player playerTwo, String randomWord) {
@@ -22,6 +21,7 @@ public class Game {
         this.playerTwo = playerTwo;
         this.randomWord = randomWord;
         this.guessedLetters = new ArrayList<>();
+        this.gameRunning = true;
     }
 
     public void setRandomPlayer() {
@@ -34,7 +34,7 @@ public class Game {
 
     public void gameLoop() {
         System.out.println(GetSecretWord());
-        System.out.println(currentPlayer.getPlayer() + "! Guess a letter or the entire word:");
+        System.out.println(currentPlayer.getPlayerName() + "! Guess a letter or the entire word:");
     }
 
 
@@ -51,22 +51,34 @@ public class Game {
     }
 
     public void guess(String guess) {
+        System.out.println(randomWord);
 
         if (guess.length() != randomWord.length()) {
-            String guessedLetter = Character.toString(guess.charAt(0));
-            if (randomWord.contains(guessedLetter) && !(guessedLetters.contains(guessedLetter))) {
-                guessedLetters.add(guessedLetter.charAt(0));
+            char guessedLetter = guess.charAt(0);
+
+            System.out.println(guessedLetters);
+
+            if(!(guessedLetters.contains(guessedLetter))){
+                guessedLetters.add(guessedLetter);
                 System.out.println("You guessed " + guessedLetter);
-            } else {
-                System.out.println("Invalid guess, try again!");
             }
-        } else {
-            if (guess.equals(randomWord)) {
-                //win(currentPlayer);
+            else{
+                System.out.println("You have already guessed " + guessedLetter);
             }
+
+
+        }
+        else{
+            System.out.println(currentPlayer.getPlayerName() + " win!");
+            currentPlayer.setPoint(1);
+            gameRunning = false;
         }
 
 
+    }
+
+    public boolean gameRunning(){
+        return gameRunning();
     }
 
     public void switchPlayer() {

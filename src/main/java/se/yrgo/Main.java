@@ -21,9 +21,8 @@ public class Main {
                 String rndWord = WordGenerator.getWord("src/main/java/se/yrgo/wordlist.txt");
                 Game game = new Game(player1,player2,rndWord);
                 game.setRandomPlayer();
-                while (true){
+                while (game.gameRunning()){
                     game.gameLoop();
-
                     game.guess(scanner.next());
                     game.switchPlayer();
                 }
