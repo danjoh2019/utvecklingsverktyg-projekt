@@ -52,8 +52,11 @@ public class Game {
         System.out.println(currentPlayer.getPlayerName() + "! Gissa en bokstav eller hela ordet:");
     }
 
+    public Player getCurrentPlayer(){
+        return currentPlayer;
+    }
 
-    private String GetSecretWord() {
+    public String GetSecretWord() {
         String output = "";
         for (int i = 0; i < randomWord.length(); i++) {
             if (guessedLetters.contains(randomWord.charAt(i))) {
