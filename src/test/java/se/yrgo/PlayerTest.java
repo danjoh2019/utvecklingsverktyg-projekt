@@ -18,8 +18,9 @@ class PlayerTest {
 
     @Test
     void testPlayerpoint() {
-        int number = 0;
+
         Player player = new Player("kalle");
+        int number = player.getPoint();
         player.addPoint();
         assertTrue(number < player.getPoint());
 
