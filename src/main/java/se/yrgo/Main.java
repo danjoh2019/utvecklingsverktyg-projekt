@@ -14,14 +14,14 @@ public class Main {
             System.out.println("╚═════════════╝");
             // Metod för att få fram ett slumpat ord
 
-            System.out.printf("Vad heter spelare 1?: ");
+            System.out.print("Vad heter spelare 1?: ");
             Player player1 = new Player(scanner.next());
-            System.out.printf("Vad heter spelare 2?: ");
+            System.out.print("Vad heter spelare 2?: ");
             Player player2 = new Player(scanner.next());
 
         while (playAgain) {
 
-            for (int i = 0; i < 1; i++) {
+            for (int i = 0; i < 3; i++) {
                 String rndWord = WordGenerator.getWord("src/main/java/se/yrgo/wordlist.txt");
                 Game game = new Game(player1, player2, rndWord);
 
@@ -46,14 +46,11 @@ public class Main {
             String input = scanner.next();
             scanner.nextLine();
 
-                switch (input) {
-                    case "n":
-                        playAgain = false;
-                }
+            if (input.equalsIgnoreCase("n")) {
+                playAgain = false;
+            }
 
         }
-
-
             System.out.println("Tack för att ni spelade!");
 
         } catch (IOException ex) {
