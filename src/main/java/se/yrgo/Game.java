@@ -2,17 +2,14 @@ package se.yrgo;
 
 import java.nio.file.Path;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Game {
-    private boolean running;
-    private Player playerOne;
-    private Player playerTwo;
+    private final Player playerOne;
+    private final Player playerTwo;
     private Player currentPlayer;
-    private Path RANDOM_WORD_LIST;
-    private String randomWord;
+    private final String randomWord;
     private List<Character> guessedLetters;
     private List<Character> usedLetters = new ArrayList<>();
     private boolean gameRunning;
@@ -54,6 +51,10 @@ public class Game {
         System.out.print(currentPlayer.getPlayerName() + ", gissa en bokstav eller hela ordet: ");
     }
 
+
+    public Player getCurrentPlayer(){
+        return currentPlayer;
+    }
 
     public String GetSecretWord() {
         String output = "";
