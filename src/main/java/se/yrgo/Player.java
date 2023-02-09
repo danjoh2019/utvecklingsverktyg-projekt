@@ -1,7 +1,10 @@
 package se.yrgo;
 
+/**
+ * Her we input the player's name and generate points to the players.
+ */
 public class Player {
-    private String name;
+    private final String name;
 
     private int point;
 
@@ -9,6 +12,7 @@ public class Player {
         this.name = player;
         this.point = 0;
     }
+
 
     public String getPlayerName() {
         return name;
@@ -19,7 +23,7 @@ public class Player {
     }
 
     void addPoint() {
-        this.point =+ 1;
+        this.point += 1;
     }
 }
 
