@@ -20,3 +20,4 @@ flygplan
 ljudbok
 alfabet
 konduktör
+lastbil
