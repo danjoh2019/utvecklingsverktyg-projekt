@@ -20,3 +20,6 @@ flygplan
 ljudbok
 alfabet
 konduktör
+lastbil
+varuhus
+grävskopa
