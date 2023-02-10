@@ -22,3 +22,4 @@ alfabet
 konduktör
 lastbil
 varuhus
+grävskopa
