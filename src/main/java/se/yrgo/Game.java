@@ -68,7 +68,7 @@ public class Game {
     }
 
     /**
-     * @return A player object that represent the current player
+     * @return A player object that represent the current player TEST
      */
     public Player getCurrentPlayer(){
 
