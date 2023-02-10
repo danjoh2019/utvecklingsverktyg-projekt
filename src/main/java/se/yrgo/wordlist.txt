@@ -21,3 +21,4 @@ ljudbok
 alfabet
 konduktör
 lastbil
+varuhus
